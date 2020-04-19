@@ -1,0 +1,5 @@
+DATABASE_NAME = 'seismic-test'
+
+MONGO_DB_URL = 'mongodb://username:password@localhost:27017/'
+
+BASE_SEISMIC_COLLECTION = 'seismic-collection'
