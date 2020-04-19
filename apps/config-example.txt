@@ -1,5 +1,8 @@
 DATABASE_NAME = 'seismic-test'
 
-MONGO_DB_URL = 'mongodb://username:password@localhost:27017/'
+MONGO_DB_USER = 'user'
+MONGO_DB_PASSWORD = 'password'
+MONGO_DB_HOST = 'localhost:27017'
 
 BASE_SEISMIC_COLLECTION = 'seismic-collection'
+
