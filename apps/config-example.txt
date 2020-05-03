@@ -5,3 +5,5 @@ MONGO_DB_PASSWORD = 'password'
 MONGO_DB_HOST = 'localhost:27017'
 
 BASE_SEISMIC_COLLECTION = 'seismic-collection'
+
+PARSER_URL = 'https://earthquake.usgs.gov/fdsnws/event/1/'
