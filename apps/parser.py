@@ -1,8 +1,7 @@
 import json
-import pandas as pd
-from datetime import datetime, date
-
 import requests
+import pandas as pd
+from datetime import date
 
 from config import PARSER_URL
 
@@ -46,7 +45,7 @@ class Parser:
 		return data['count']
 
 	def get_count_today(self):
-		today = datetime.now().date()
+		today = date.today()
 
 		return self.get_count(start=today)
 
@@ -93,6 +92,6 @@ class Parser:
 		return list(pandasDF.T.to_dict().values())
 
 	def get_information_today(self):
-		today = datetime.now().date()
+		today = date.today()
 
 		return self.get_information(start=today)

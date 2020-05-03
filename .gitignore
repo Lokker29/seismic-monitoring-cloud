@@ -142,3 +142,5 @@ dump.rdb
 apps/config.py
 
 mongo_db
+
+mongo-init.js
