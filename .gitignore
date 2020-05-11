@@ -4,7 +4,7 @@
 __pycache__/
 *.py[cod]
 *$py.class
-
+mongo-init.js
 # C extensions
 *.so
 
@@ -143,4 +143,3 @@ apps/config.py
 
 mongo_db
 
-mongo-init.js
