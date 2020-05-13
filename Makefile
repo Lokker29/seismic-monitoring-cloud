@@ -2,8 +2,11 @@ WORKDIR = apps
 
 run: print docker-run main-run docker-stop
 
-main-run:
+main:
 	python $(WORKDIR)/main.py
+
+old:
+	python $(WORKDIR)/generate_old_data.py
 
 print:
 	echo "Hello World"
