@@ -81,11 +81,6 @@ class Parser:
 			'place': feature['properties']['place'],
 			'time': feature['properties']['time'],
 			'title': feature['properties']['title'],
-			'dmin': feature['properties']['dmin'],
-			'nst': feature['properties']['nst'],
-			'rms': feature['properties']['rms'],
-			'gap': feature['properties']['gap'],
-			'sig': feature['properties']['sig'],
 		} for feature in data['features']])
 
 		pandasDF.dropna(inplace=True)
