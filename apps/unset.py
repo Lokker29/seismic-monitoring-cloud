@@ -6,9 +6,12 @@ def main():
     columns = input("Remove columns: ").split()
 
     client = DBClient()
-    client.create_db(MONGO_DB_HOST, MONGO_DB_USER, MONGO_DB_PASSWORD)
+    client.connect_db(MONGO_DB_HOST, MONGO_DB_USER, MONGO_DB_PASSWORD)
 
-    client.unset(DATABASE_NAME, BASE_SEISMIC_COLLECTION, *columns)
+    client.set_db(DATABASE_NAME)
+    client.set_collection(BASE_SEISMIC_COLLECTION)
+
+    client.unset(*columns)
 
 
 if __name__ == '__main__':

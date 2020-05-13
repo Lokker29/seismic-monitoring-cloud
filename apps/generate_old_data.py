@@ -5,13 +5,16 @@ from parser import Parser
 
 def update_info(parser, client, start, end):
     info = parser.get_information(start, end)
-    client.add_to_collection(DATABASE_NAME, BASE_SEISMIC_COLLECTION, data=info)
+    client.add_to_collection(data=info)
 
 
 def main():
     client = DBClient()
 
-    client.create_db(MONGO_DB_HOST, MONGO_DB_USER, MONGO_DB_PASSWORD)
+    client.connect_db(MONGO_DB_HOST, MONGO_DB_USER, MONGO_DB_PASSWORD)
+
+    client.set_db(DATABASE_NAME)
+    client.set_collection(BASE_SEISMIC_COLLECTION)
 
     parser = Parser()
 
