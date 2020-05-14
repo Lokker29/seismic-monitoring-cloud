@@ -1,3 +1,4 @@
+import numpy as np
 from datetime import datetime
 
 from pymongo import MongoClient
@@ -72,8 +73,11 @@ class DBClient:
     def save_model(self, model):
         self.collection.remove({})
 
-        model_param = {}
-        model_param['coef'] = list(model.coef_)
-        model_param['intercept'] = model.intercept_.tolist()
+        data = model.__dict__
 
-        self.collection.insert_one({'ml_model': model_param})
+        data = {key: list(value) if isinstance(value, np.ndarray) else value for key, value in data.items()}
+
+        self.collection.insert_one(data)
+
+    def save_predict(self, predict):
+        self.collection.insert_one({'predict': predict})
