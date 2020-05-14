@@ -9,3 +9,6 @@ BASE_SEISMIC_COLLECTION = 'seismic-collection'
 PARSER_URL = 'https://earthquake.usgs.gov/fdsnws/event/1/'
 
 ML_MODEL = 'ML-model'
+ML_PREDICT = 'ML-predict'
+
+START_DATE = '2020-03-10'
