@@ -1,31 +1,11 @@
 version: '3.1'
 
 services:
-#  seismic-cloud:
-#    build: .
-#    ports:
-#    - 8585:8585
-#    restart: always
-
   mongo:
     container_name: seismic_mongo
     image: mongo
     ports:
     - 27017:27017
-    environment:
-      MONGO_INITDB_ROOT_USERNAME: root
-      MONGO_INITDB_ROOT_PASSWORD: 23052019
     volumes:
     - ./mongo_db:/data/db
     - ./mongo-init.js:/docker-entrypoint-initdb.d/mongo-init.js:ro
-
-  mongo-express:
-    container_name: seismic_mongo_express
-    image: mongo-express
-    ports:
-      - 8081:8081
-    environment:
-      ME_CONFIG_MONGODB_ADMINUSERNAME: root
-      ME_CONFIG_MONGODB_ADMINPASSWORD: 23052019
-    depends_on:
-      - mongo
